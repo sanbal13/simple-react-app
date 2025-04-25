@@ -1,5 +1,6 @@
 {
   "name": "my-small-react-app",
+  "homepage": "https://sanbal13.github.io/simple-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
