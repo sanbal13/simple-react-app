@@ -2,14 +2,20 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: write # This is crucial for deployment
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0 # Important for git history
 
-      - name: Install and Build
+      - name: Install and Build 🔧
         run: |
           npm install
           npm run build
@@ -19,3 +25,4 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+          
